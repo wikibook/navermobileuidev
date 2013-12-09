@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+
+        <title>네이버</title>
+        <link rel="stylesheet" type="text/css" href="./css/css.css">
+
+        <script src="./js/jindo.mobile.all.js"></script>
+        <script src="./js/jindo_mobile_component.js"></script>
+        
+    </head>
+
+    <body class="s">
+
+        <div class="u_skip">
+            <a href="#ct">본문 바로가기</a>
+        </div>
+
+        <div id="header" class="header reveal-header">
+
+            <header role="banner">
+
+                <div class="lgslk">
+                    <h1 class="lg"><a href="http://m.naver.com" class="lg_a" ><img src="http://static.naver.net/www/u/2013/0306/mma_144833357.png" width="95" height="30" alt="네이버" class="lg_m"></a></h1>
+                </div>
+                <div id="sch" class="sch">
+                    <section>
+                        <form role="search" name="search" id="search" action="http://m.search.naver.com/search.naver" onSubmit="if (oKeywordHistory) oKeywordHistory.add($('query').value);">
+                            <h1 class="u_vc">검색</h1>
+                            <span class="sch_inpw"> <span class="sch_inpw_in">
+                                    <input type="text" id="query" name="query" title="검색어 입력" value="" class="sch_inp" autocomplete="off" maxlength="255" data-initval="" onfocus="this.setAttribute('data-focus','focus');">
+                                    <input type="hidden" name="where" value="m" />
+                                    <input type="hidden" id="sm" name="sm" value="mtp_hty" />
+                                    <button id="clear_input" type="button" class="sch_del">
+                                        <span class="imsc imsc_del">입력 내용 삭제</span>
+                                    </button>
+                                    <button type="submit" class="sch_submit" >
+                                        <span class="imsc imsc_submit">검색</span>
+                                    </button> </span> </span>
+                            <button id="sch_ext_btn" type="button" class="sch_btn sch_region">
+                                <span class="imsc imsc_region">버튼 </span>
+                            </button>
+                        </form>
+                </div>
+                </section>
+            </header>
+
+            <!-- 실시간 급상승 -->
+            <div id="u_rkw" class="u_rkw">
+                <section>
+                    <h1 class="u_rkw_h"><a id="rkw_title_btn" href="#" class="u_rkw_ha" >실시간 급상승</a></h1>
+                    <div id="u_rkw_rol" class="u_rkw_rol">
+                        <a href="#" class="u_rkw_a" > <span class="u_rkw_kw"> <span class="u_rkw_rkn">1</span> JINDO</span> <span class="u_rkw_n u_rkw_up"><span class="u_rkw_ico">상승</span> 270</span> </a>
+                    </div>
+                </section>
+            </div>
+            <!-- //실시간 급상승 -->
+
+            <div id="nav" class="nav">
+                <nav role="navigation">
+                    <ul class="nav_u">
+                        <li class="nav_l nav_1 nav_lon">
+                            <a class="nav_a" >뉴스<span class="nav_pg"></a>
+                        </li>
+                        <li class="nav_l nav_2">
+                            <a class="nav_a">연예<span class="nav_pg"></a>
+                        </li>
+                        <li class="nav_l nav_3">
+                            <a class="nav_a">스포츠</a>
+                        </li>
+                        <li class="nav_l nav_4">
+                            <a class="nav_a">라이프<span class="nav_pg"></a>
+                        </li>
+                        <li class="nav_l nav_5">
+                            <a class="nav_a">FUN</a>
+                        </li>
+                        <li class="nav_l nav_6">
+                            <a class="nav_a">쇼핑<span class="nav_pg"></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+
+        <!-- 오른쪽 네비 -->
+        <div id="aside" class="reveal-nav" style="display: none;z-index:2200">
+            <aside style="">
+                <h2 class="blind">확장형 좌측 메뉴</h2>
+                <div class="sc_psn"  id="scroll_view">
+                    <div>
+                    <h3 class="asd_h3">자주가는 서비스</h3>
+                    <ul>
+                        <li>
+                            <a href="http://jindo.dev.naver.com/jindo_home/" class="sv_a"><em class="sv_t">JindoJS</em></a>
+                        </li>
+                        <li>
+                            <a href="http://jindo.dev.naver.com/jindo_home/Component.html" class="sv_a"><em class="sv_t">Jindo Component</em></a>
+                        </li>
+                        <li>
+                            <a href="http://jindo.dev.naver.com/jindo_home/Mobile.html" class="sv_a"><em class="sv_t">Jindo Mobile Component</em></a>
+                        </li>
+                        <li>
+                            <a href="http://m.news.naver.com/" class="sv_a"><em class="sv_t">뉴스</em></a>
+                        </li>
+                        <li>
+                            <a href="http://m.news.naver.com/" class="sv_a"><em class="sv_t">웹툰</em></a>
+                        </li>
+                        <li>
+                            <a href="http://m.news.naver.com/" class="sv_a"><em class="sv_t">부동산</em></a>
+                        </li>
+                        <li>
+                            <a href="http://m.news.naver.com/" class="sv_a"><em class="sv_t">가계부</em></a>
+                        </li>
+                        <li>
+                            <a href="http://m.news.naver.com/" class="sv_a"><em class="sv_t">증권</em></a>
+                        </li>
+                        <li>
+                            <a href="http://m.news.naver.com/" class="sv_a"><em class="sv_t">금융</em></a>
+                        </li>
+                        <li>
+                            <a href="http://m.news.naver.com/" class="sv_a"><em class="sv_t">날씨</em></a>
+                        </li>
+                        <li>
+                            <a href="http://m.news.naver.com/" class="sv_a"><em class="sv_t">뮤직</em></a>
+                        </li>
+                        <li>
+                            <a href="http://m.news.naver.com/" class="sv_a"><em class="sv_t">미술</em></a>
+                        </li>
+                        <li>
+                            <a href="http://m.news.naver.com/" class="sv_a"><em class="sv_t">북마크</em></a>
+                        </li>
+                        <li>
+                            <a href="http://m.news.naver.com/" class="sv_a"><em class="sv_t">사전</em></a>
+                        </li>
+                        <li>
+                            <a href="http://m.news.naver.com/" class="sv_a"><em class="sv_t">스포츠</em></a>
+                        </li>
+                        <li>
+                            <a href="http://m.news.naver.com/" class="sv_a"><em class="sv_t">영화</em></a>
+                        </li>
+                        <li>
+                            <a href="http://m.news.naver.com/" class="sv_a"><em class="sv_t">오늘의 신</em></a>
+                        </li>
+                        <li>
+                            <a href="http://m.news.naver.com/" class="sv_a"><em class="sv_t">오피스</em></a>
+                        </li>
+                        <li>
+                            <a href="http://m.news.naver.com/" class="sv_a"><em class="sv_t">인물검색</em></a>
+                        </li>
+                        <li>
+                            <a href="http://m.news.naver.com/" class="sv_a"><em class="sv_t">일어번역</em></a>
+                        </li>
+                        <li>
+                            <a href="http://m.news.naver.com/" class="sv_a"><em class="sv_t">자동차</em></a>
+                        </li>
+                        <li>
+                            <a href="http://m.news.naver.com/" class="sv_a"><em class="sv_t">주소록</em></a>
+                        </li>
+                        <li>
+                            <a href="http://m.news.naver.com/" class="sv_a"><em class="sv_t">지도</em></a>
+                        </li>
+                        <li>
+                            <a href="http://m.news.naver.com/" class="sv_a"><em class="sv_t">책</em></a>
+                        </li>
+                        <li>
+                            <a href="http://m.news.naver.com/" class="sv_a"><em class="sv_t">체크아웃</em></a>
+                        </li>
+                        <li>
+                            <a href="http://m.news.naver.com/" class="sv_a"><em class="sv_t">캘린더</em></a>
+                        </li>
+                        <li>
+                            <a href="http://m.news.naver.com/" class="sv_a"><em class="sv_t">쿠폰</em></a>
+                        </li>
+                        <li>
+                            <a href="http://m.news.naver.com/" class="sv_a"><em class="sv_t">포토앨범</em></a>
+                        </li>
+                        <li>
+                            <a href="http://m.news.naver.com/" class="sv_a"><em class="sv_t">TV편성표</em></a>
+                        </li>
+                        <li>
+                            <a href="http://m.news.naver.com/" class="sv_a"><em class="sv_t">다이어리</em></a>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <!-- ct -->
+        <div id="ct" role="main" class="reveal-contents">
+
+            <div class="">
+
+                <div id="ct1" class="ct">
+
+                    <div class="wrap id_news">
+                        <div class="wrap_margin"></div>
+                        <div class="wrap_cont">
+                            <div class="cont " id="mflick" >
+                                <div class="flick-container">
+                                    <div class="flick-ct" style="position:relative !important;">
+                                        <section>
+                                            <h1 class="u_vc">뉴스</h1>
+                                            <!-- EMPTY -->
+                                            <ul class="lst_w">
+                                                <li class="lst">
+                                                    <a href="http://jindo.dev.naver.com/jindo_home/Mobile.html" class="lst_a" > <span class="subject_nf">[속보]</span> <strong>Jindo Mobile Component </strong></a>
+                                                </li>
+                                                <li class="lst">
+                                                    <a href="http://m.news.naver.com/issueGroup.nhn?sid1=100&amp;pid=mbs.875.100&amp;cid=940967&amp;type=issue&amp;page=1" class="lst_a" > <strong>정부, 北에 마지막 회담 제의…날짜·장소 제시 안해</strong></a>
+                                                </li>
+                                                <li class="lst">
+                                                    <a href="http://m.news.naver.com/main.nhn?mode=LSD&amp;sid1=103" class="lst_a" > "차 충돌시 조수석 여성, 운전석 남성보다 더 다쳐"</a>
+                                                </li>
+                                            </ul>
+                                            <ul class="lst_w">
+                                                <li class="lst">
+                                                    <a href="http://m.news.naver.com/read.nhn?mode=LSD&amp;sid1=103&amp;oid=003&amp;aid=0005289738" class="lst_a" > 중부지방 이번주 내내 비…역대 최장기 장마 '50일'</a>
+                                                </li>
+                                                <li class="lst">
+                                                    <a href="http://m.news.naver.com/read.nhn?mode=LS2D&amp;sid1=101&amp;sid2=261&amp;oid=008&amp;aid=0003090387" class="lst_a" > 매일유업 우윳값 인상 스타트… 내달 7일 10.6%↑</a>
+                                                </li>
+                                                <li class="lst">
+                                                    <a href="http://m.news.naver.com/main.nhn?mode=LSD&amp;sid1=106" class="lst_a" > <span class="subject">[연예]</span> 싸이, 9월 새음반 목표…"미국서 작업 한창"</a>
+                                                </li>
+                                                <li class="lst">
+                                                    <a href="http://m.sports.naver.com/worldfootball/index.nhn" class="lst_a" > <span class="subject" onclick="return prefixClick('http://m.sports.naver.com','nw1.cont7')">[스포츠]</span> 박지성 PSV행, '절친' 판니스텔로이가 추천</a>
+                                                </li>
+                                            </ul>
+                                            <ul class="tlst_w">
+                                                <li class="tlst">
+                                                    <a href="http://m.news.naver.com/read.nhn?mode=LS2D&amp;sid1=102&amp;sid2=257&amp;oid=001&amp;aid=0006399263" class="tlst_a" > <span class="tlst_mw"> <img width="92" height="70" alt="" class="tlst_m" src="./img/110732921_245.jpg"> </span> <span class="tlst_d"> 사우나실 천장 돌 떨어져 2명 부상</span> </a>
+                                                </li>
+                                                <li class="tlst">
+                                                    <a href="http://m.news.naver.com/photoViewer.nhn?componentId=863302&amp;panelId=hot.011.148.863302&amp;oid=109&amp;aid=0002584976" class="tlst_a" > <span class="tlst_mw"> <img width="92" height="70" alt="" class="tlst_m" src="./img//112354110_201307291116775756_51f5d0c0aad2d_59_20130729111804.jpg"> </span> <span class="tlst_icw"><span class="im im_pho">포토 슬라이드</span></span> <span class="tlst_d"> '설국열차' 고아성 '상큼한 손인사~'</span> </a>
+                                                </li>
+                                                <li class="tlst">
+                                                    <a href="http://m.sports.naver.com/worldbaseball/news/read.nhn?oid=108&amp;aid=0002235587" class="tlst_a" > <span class="tlst_mw"> <img width="92" height="70" alt="" class="tlst_m" src="./img/125554039_00.jpg"> </span> <span class="tlst_icw"><span class="im im_mov">동영상</span></span> <span class="tlst_d"> 태연 애국가 가창력 폭발 '전율'</span> </a>
+                                                </li>
+                                            </ul>
+                                            <ul class="lst_w">
+                                                <li class="lst">
+                                                    <a href="http://m.news.naver.com/read.nhn?mode=LS2D&amp;sid1=105&amp;sid2=230&amp;oid=030&amp;aid=0002230342" class="lst_a" > 스마트폰 자주 사용하면 자신감 떨어진다</a>
+                                                </li>
+                                                <li class="lst li_last">
+                                                    <a href="http://m.news.naver.com/read.nhn?mode=LS2D&amp;sid1=102&amp;sid2=257&amp;oid=003&amp;aid=0005289762" class="lst_a" > 학생들 가장 듣기 싫은 말 "넌 왜 맨날 그 모양이니"</a>
+                                                </li>
+                                            </ul>
+
+                                            <p class="mr"></p>
+                                        </section>
+                                    </div>
+                                    <div class="flick-ct">
+                                        <section>
+                                            <h1 class="u_vc">연예</h1>
+                                            <ul class="tlst_w">
+                                                <li class="tlst">
+                                                    <a href="http://m.news.naver.com/photoViewer.nhn?componentId=863302&amp;panelId=hot.011.148.863302&amp;oid=277&amp;aid=0003054835" class="tlst_a" > <span class="tlst_mw"> <img  width="92" height="70" alt="" class="tlst_m" src="./img/205431551_1.jpg"> </span> <span class="tlst_icw"><span class="im im_pho">포토 슬라이드</span></span> <span class="tlst_d"> 한예슬·이병헌 '설국열차 응원..'</span> </a>
+                                                </li>
+                                                <li class="tlst">
+                                                    <a href="http://m.news.naver.com/photoViewer.nhn?componentId=852732&amp;panelId=hot.011.148.852732&amp;oid=213&amp;aid=0000356202" class="tlst_a" > <span class="tlst_mw"> <img  width="92" height="70" alt="" class="tlst_m" src="./img/180111696_untitled-12.jpg"> </span> <span class="tlst_icw"><span class="im im_pho">포토 슬라이드</span></span> <span class="tlst_d"> 태연 '귀여운 고양이' 완벽 변신</span> </a>
+                                                </li>
+                                                <li class="tlst">
+                                                    <a href="http://m.news.naver.com/photoViewer.nhn?componentId=845731&amp;panelId=hot.011.148.845731&amp;oid=073&amp;aid=0002293899" class="tlst_a" > <span class="tlst_mw"> <img width="92" height="70" alt="" class="tlst_m" src="./img/164824471_1.jpg"> </span> <span class="tlst_icw"><span class="im im_pho">포토 슬라이드</span></span> <span class="tlst_d"> 샘 해밍턴 '예능 대세의 미소'</span> </a>
+                                                </li>
+                                            </ul>
+                                            <div class="lst_dv">
+                                                <p class="lst_dv_p">
+                                                    <a href="http://m.news.naver.com/read.nhn?mode=LS2D&amp;sid1=106&amp;sid2=221&amp;oid=109&amp;aid=0002585098" class="lst_dv_a" > 최수종, 8월 10일 'SNL' 호스트 출격</a>
+                                                </p>
+                                            </div>
+                                            <ul class="lst_w">
+                                                <li class="lst">
+                                                    <a href="http://m.news.naver.com/read.nhn?mode=LS2D&amp;sid1=106&amp;sid2=224&amp;oid=117&amp;aid=0002359597" class="lst_a" > 임시완, '연애를 기대해' 합류…보아와 첫 호흡</a>
+                                                </li>
+                                            </ul>
+                                            <ul class="tlst_w">
+                                                <li class="tlst">
+                                                    <a href="http://m.news.naver.com/photoViewer.nhn?componentId=845648&amp;panelId=hot.011.148.845648&amp;oid=382&amp;aid=0000120147" class="tlst_a" > <span class="tlst_mw"> <img  width="92" height="70" alt="" class="tlst_m" src="./img/183517489_56732955_2_59_20130729183002.jpg"> </span> <span class="tlst_icw"><span class="im im_pho">포토 슬라이드</span></span> <span class="tlst_d"> 유빈, 키스를 부르는 입술 '쪽'</span> </a>
+                                                </li>
+                                                <li class="tlst">
+                                                    <a href="http://m.news.naver.com/photoViewer.nhn?componentId=845598&amp;panelId=hot.011.148.845598&amp;oid=117&amp;aid=0002359507" class="tlst_a" > <span class="tlst_mw"> <img width="92" height="70" alt="" class="tlst_m" src="./img/175210094_untitled-11.jpg"> </span> <span class="tlst_icw"><span class="im im_pho">포토 슬라이드</span></span> <span class="tlst_d"> 션, 첫째 아들 공개 '시크남'</span> </a>
+                                                </li>
+                                                <li class="tlst">
+                                                    <a href="http://m.news.naver.com/photoViewer.nhn?componentId=849491&amp;panelId=hot.011.148.849491&amp;oid=108&amp;aid=0002235671" class="tlst_a" > <span class="tlst_mw"> <img  width="92" height="70" alt="" class="tlst_m" src="./img/175310421_2013072915594838230_1_59_20130729161602.jpg"> </span> <span class="tlst_icw"><span class="im im_pho">포토 슬라이드</span></span> <span class="tlst_d"> 김현중 MV공개..과감 스킨십</span> </a>
+                                                </li>
+                                            </ul>
+                                            <ul class="lst_w">
+                                                <li class="lst2 li_last">
+                                                    <a href="http://m.news.naver.com/read.nhn?mode=LS2D&amp;sid1=106&amp;sid2=224&amp;oid=277&amp;aid=0003054616" class="lst2_a" > <span class="lst2_ctw"> <span class="lst2_h"> 유세윤 측 "'SNL코리아' 출연 확정아냐..고민중"</span> <span class="lst2_d"> 개그맨 유세윤이 케이블채널 tvN 'SNL코리아'를 통해 복귀한다는 소식이 전해진 가운데, 소속사 측이 이를 부인하고 나섰다..</span> </span> </a>
+                                                </li>
+                                            </ul>
+                                            <div class="lst_dv">
+                                                <p class="lst_dv_p">
+                                                    <a href="http://m.news.naver.com/read.nhn?mode=LS2D&amp;sid1=106&amp;sid2=221&amp;oid=108&amp;aid=0002235661" class="lst_dv_a" > 비스트, 韓日오가며 '컴백활동 왕성'</a>
+                                                </p>
+                                            </div>
+                                            <ul class="lst_w"></ul><p class="mr"></p>
+                                        </section>
+                                    </div>
+                                    <div class="flick-ct">
+                                        <section>
+                                            <h1 class="u_vc">쇼핑</h1>
+                                            <div class="spc">
+                                                <section>
+                                                    <h1 class="h2"><em class="cate">"자취생" 특집</em> 혼자 사는 20~30대 여자라면 공감!</h1>
+                                                    <ul class="tlst_w">
+                                                        <li class="tlst">
+                                                            <a href="http://m.shopping.naver.com/plan/list.nhn?planSeq=35434" class="tlst_a" > <span class="tlst_mw"> <img  width="92" height="70" alt="인테리어" class="tlst_m" src="./img/mma_103959536c.jpg"> </span> <span class="tlst_d"> 다른건 몰라도
+                                                                <br>
+                                                                이건 꼭~있어야 돼</span> </a>
+                                                        </li>
+                                                        <li class="tlst">
+                                                            <a href="http://m.shopping.naver.com/plan/list.nhn?planSeq=36023" class="tlst_a" > <span class="tlst_mw"> <img  width="92" height="70" alt="푸드" class="tlst_m" src="./img/mma_192644355c.jpg"> </span> <span class="tlst_d"> '쟁여두고' 혼자
+                                                                <br>
+                                                                흡입하고 싶어~</span> </a>
+                                                        </li>
+                                                        <li class="tlst">
+                                                            <a href="http://m.shopping.naver.com/plan/list.nhn?planSeq=36024" class="tlst_a" > <span class="tlst_mw"> <img  width="92" height="70" alt="홈웨어" class="tlst_m" src="./img/mma_10401262c.jpg"> </span> <span class="tlst_d"> 남친 '급'방문해도
+                                                                <br>
+                                                                굴욕 없는 홈웨어!</span> </a>
+                                                        </li>
+                                                    </ul><ul class="lst_w"></ul>
+                                                </section>
+                                            </div>
+                                            <ul class="lst_w">
+                                                <li class="lst">
+                                                    <a href="http://m.shopping.naver.com/plan/list.nhn?planSeq=35544" class="lst_a" > <span class="cate">패션</span> 10년 지난 후에 꺼내 입어도 '귀티' 넘칠듯한 옷~</a>
+                                                </li>
+                                                <li class="lst">
+                                                    <a href="http://m.shopping.naver.com/plan/list.nhn?planSeq=35860" class="lst_a" > <span class="cate">패션</span> 아침마다 뭐 입을지 고민 안해도 되는 '훈템' BEST2</a>
+                                                </li>
+                                                <li class="lst">
+                                                    <a href="http://m.shopping.naver.com/styleplus/column/detail.nhn?colSeq=242" class="lst_a" > <span class="cate">뷰티</span> 먹다 남은 음료수로 피부 관리를 할 수 있다고?!</a>
+                                                </li>
+                                                <li class="lst">
+                                                    <a href="http://m.shopping.naver.com/plan/list.nhn?planSeq=36047" class="lst_a" > <span class="cate">패션</span> 요즘 대학생들이 7월에 하나씩은 쇼핑한 브랜드!</a>
+                                                </li>
+                                            </ul>
+                                            <div class="spc spc_bg">
+                                                <section>
+                                                    <h1 class="h2"><em class="cate">트렌드핫링크</em> 가벼운 느낌으로 여성미 뽐내기~</h1>
+                                                    <ul class="tlst_w">
+                                                        <li class="tlst">
+                                                            <a href="http://m.shopping.naver.com/trendhot/list.nhn?bizCd=140201&amp;bidSeq=17974558&amp;mallSeq=192056" class="tlst_a" > <span class="tlst_mw"> <img  width="92" height="70" alt="미니아트 / 5365" class="tlst_m" src="./img/mma_959940c.jpg"> </span> <span class="tlst_d"> 발끝마저 '귀염상'
+                                                                <br>
+                                                                토우링 여기다있대</span> </a>
+                                                        </li>
+                                                        <li class="tlst">
+                                                            <a href="http://m.shopping.naver.com/trendhot/list.nhn?bizCd=140201&amp;bidSeq=17974541&amp;mallSeq=156511" class="tlst_a" > <span class="tlst_mw"> <img  width="92" height="70" alt="슈가펀 / 5315" class="tlst_m" src="./img/mma_95914988c.jpg"> </span> <span class="tlst_d"> 특별한 연출없이도
+                                                                <br>
+                                                                걸리쉬한 감성룩~</span> </a>
+                                                        </li>
+                                                        <li class="tlst">
+                                                            <a href="http://m.shopping.naver.com/trendhot/list.nhn?bizCd=140201&amp;bidSeq=17974469&amp;mallSeq=173146" class="tlst_a" > <span class="tlst_mw"> <img  width="92" height="70" alt="엘롯데 / 5454" class="tlst_m" src="./img/mma_95921278c.jpg"> </span> <span class="tlst_d"> 같은 옷 다른느낌
+                                                                <br>
+                                                                센스 넘치는 코디!</span> </a>
+                                                        </li>
+                                                    </ul>
+                                                </section>
+                                            </div><p class="mr"></p>
+                                        </section>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="reco2">
+                                <section>
+                                    <div class="h_wrap">
+                                        <h1 class="h">요즘 딱 궁금했어! 알아두면 딱 좋은, IT 상식<span class="hds2"></span></h1>
+                                    </div>
+                                    <ul class="tlst_w">
+                                        <li class="tlst">
+                                            <a href="http://m.news.naver.com/read.nhn?mode=LSD&amp;mid=sec&amp;sid1=105&amp;oid=366&amp;aid=0000136160" class="tlst_a" > <span class="tlst_mw"><img width="92" height="70" alt="휴대폰 응급처치" class="tlst_m" src="./img/mma_12216424.jpg"></span> <span class="tlst_d">젖은 스마트폰과
+                                                <br>
+                                                PC, 처치 어떻게?</span> </a>
+                                        </li>
+                                        <li class="tlst">
+                                            <a href="http://m.tvcast.naver.com/v/71863/" class="tlst_a"> <span class="tlst_mw"><img width="92" height="70" alt="휴가 전 체크" class="tlst_m" src="./img/mma_23822535.jpg"></span> <span class="tlst_d">휴가 전 체크!
+                                                <br>
+                                                스마트한 여행을</span> </a>
+                                        </li>
+                                        <li class="tlst">
+                                            <a href="http://m.shopping.naver.com/magazine/detail.nhn?cpCntsSeq=67576536&amp;cntsCatCd=C54003" class="tlst_a" > <span class="tlst_mw"><img width="92" height="70" alt="디카 관리" class="tlst_m" src="./img/mma_2544784.jpg"></span> <span class="tlst_d">무더운 장마철
+                                                <br>
+                                                디카 관리, 보관법</span> </a>
+                                        </li>
+                                    </ul>
+                                    <ul class="lst_w">
+                                        <li class="lst">
+                                            <a href="http://m.news.naver.com/read.nhn?mode=LSD&amp;mid=sec&amp;sid1=100&amp;oid=003&amp;aid=0005270901" class="lst_a" > <span class="cate">뉴스</span> 1년에 13만 원 절약? IT기기 10가지 절전 요령</a>
+                                        </li>
+                                        <li class="lst">
+                                            <a href="http://m.navercast.naver.com/magazine_contents.nhn?rid=1103&amp;contents_id=32478" class="lst_a" > <span class="cate">Q&amp;A</span> 인터넷 거의 안 쓰는데 왜 남은 데이터 줄까요?</a>
+                                        </li>
+                                    </ul>
+                                </section>
+                                <div class="h_wrap">
+                                    <h1 class="h">투데이 스토리</h1>
+                                </div>
+                                <ul class="tlst_w">
+                                    <li class="tlst">
+                                        <a href="#" class="tlst_a" > <span class="tlst_mw"> <img width="92" height="70" alt="쇼핑" class="tlst_m" src="./img/mma_10398608c.jpg"> </span> <span class="tlst_d"> <span class="cate">쇼핑</span> 휴가 코디
+                                            <br>
+                                            더 늦기 전 준비해</span> </a>
+                                    </li>
+                                    <li class="tlst">
+                                        <a href="http://m.naver.com/20s/redirect.html" class="tlst_a"> <span class="tlst_mw"> <img width="92" height="70" alt="올댓20's" class="tlst_m" src="./img/twt_194632497.jpg"> </span> <span class="tlst_d"> <span class="cate4">올댓20's</span> 멀리서
+                                            <br>
+                                            보고 피자인 줄..</span> </a>
+                                    </li>
+                                    <li class="tlst">
+                                        <a href="http://me2day.net/poiu9222/2013/07/24/p5jybkg-18vu" class="tlst_a" > <span class="tlst_mw"> <img width="92" height="70" alt="미스수정" class="tlst_m" src="./img/mma_14405477.jpg"> </span> <span class="tlst_d"> <span class="cate">미투</span> 휴식 중에도
+                                            <br>
+                                            빛나는 각선미</span> </a>
+                                    </li>
+                                </ul>
+                                <ul class="lst_w">
+                                    <li class='lst'>
+                                        <a href="http://m.news.naver.com/read.nhn?oid=079&amp;aid=0002493141&amp;sid1=001&amp;mode=LSD"  class="lst_a"><span class="cate">화제</span> 당신이 매운 음식을 좋아하는 이유는?</a>
+                                    </li>
+                                    <li class='lst li_last'>
+                                        <a href="http://m.bboom.naver.com/best/get.nhn?boardNo=1&amp;postNo=298700&amp;sortTypeNo=&amp;viewTypeNo=&amp;bestTypeNo="  class="lst_a"><span class="cate">뿜</span> 너무 '고퀄'이라서 손을 댈 수가 없는 수박</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="footer" class="wrap_footer">
+                        <div id="tol" class="tol">
+                            <div class="tol_rf">
+                                <p class="tol_rfup"></p>
+                            </div>
+                            <a class="tol_top" href="#" onclick="setTimeout(function() { window.scrollTo(0,1); }, 100); return false;"><span class="im im_top"></span>맨위로</a>
+                        </div>
+                        <div class="fot">
+                            <footer role="contentinfo">
+                                <p class="fot_p2">
+                                    <a href="http://nid.naver.com/mobile/user/help/termAgree.nhn?m=viewTermAgree1" class="fot_p2a" >이용약관</a>
+                                    <a href="http://nid.naver.com/mobile/user/help/termAgree.nhn?m=viewTermAgree3" class="fot_p2a" >개인정보취급방침</a>
+                                    <a href="http://m.searchad.naver.com" class="fot_p2a" >키워드 광고</a>
+                                </p>
+                                <p class="fot_p3">
+                                    <a href="http://www.nhncorp.com" class="fot_p3a" >&copy; NAVER Corp.</a>
+
+                                    <a href="http://m.help.naver.com/serviceMain.nhn?falias=mo_main_web&amp;type=faq" class="fot_p3a" >도움말</a>
+                                    <a href="http://m.help.naver.com/serviceMain.nhn?falias=mo_main_web&amp;type=faq#mail" class="fot_p3a" >문의 및 신고</a>
+
+                                </p>
+                            </footer>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- //ct -->
+        <!-- NONE -->
+
+        <script src="./js/flick_data.js"></script>
+        <script>
+            // Script 입력 영역            
+            var aTab = jindo.$Element("nav").queryAll("ul > li");
+            var nChoice = 0;
+
+            var oSlideFlicking = new jindo.m.SlideFlicking('mflick', {
+                nTotalContents : aData.length,
+                bUseCircular : true
+            }).attach({
+                "flicking" : function(we){
+                    if (we.bCorrupt) {
+                        this.getElement().html(aData[this.getContentIndex()]);
+                        this.getNextElement().html(aData[this.getNextIndex()]);
+                        this.getPrevElement().html(aData[this.getPrevIndex()]);
+                    } else {
+                        if (we.bNext) {
+                            this.getNextElement().html(aData[this.getNextIndex()]);
+                        } else {
+                            this.getPrevElement().html(aData[this.getPrevIndex()]);
+                        }
+                    }
+                    aTab[we.nContentsIndex].addClass("nav_lon");
+                    aTab[nChoice].removeClass("nav_lon");
+                    nChoice = we.nContentsIndex;
+                }
+            })
+
+            jindo.$Element("nav").delegate("touchEnd", "li.nav_l", function(eEvent) {
+                var wel = jindo.$Element(eEvent.element);
+                if (!wel.hasClass("nav_lon")) {
+                    oSlideFlicking.moveTo(wel.parent().indexOf(wel), 0);
+                }
+            });
+
+
+            // SlideReveal
+            var oReveal = new jindo.m.SlideReveal({
+                "nMargin" : 60,
+                "sDirection" : "left"
+            })
+
+            jindo.$Element("sch_ext_btn").delegate("click", ".imsc_region", function(eEvent) {
+                oReveal.toggle();
+            });
+
+            // Scroll
+            var oScroll = null;
+            oReveal.attach({
+                "beforeShow" : function(oCustomEvent) {
+                    if(!oScroll) {
+                        oScroll = new jindo.m.Scroll("scroll_view", {
+                            bUseHScroll : false,
+                            bUseVScroll : true,
+                            bUseMomentum : true,
+                            nHeight : jindo.$Document().clientSize().height
+                        });
+                    }
+                }
+            });
+
+
+        </script>
+    </body>
+</html>

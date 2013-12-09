@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
+<title>scroll</title>
+<script src="../js/jindo.mobile.all.js" charset="utf-8"></script>
+<style>
+    div, ul, ol, li, h3 {
+        margin: 0px;
+        padding: 0px
+    }
+    ul, ol {
+        list-style: none
+    }
+    h3 {
+        background-color: #000;
+        color: #fff;
+        line-height: 2em;
+    }
+</style>
+</head>
+<body>
+<h3>Touch예제 </h3>
+<div id="touch1" style="width:100%;height:150px;background-color:gray;">
+    <p style="padding:20px;">이 화면에서 터치하세요.</p>
+</div>
+<br>
+<textarea id="txt" style="width:100%; height:200px;">
+    
+</textarea>
+
+</body>
+<script src="../js/common.js" charset="utf-8"></script>
+<script src="./touch.js" charset="utf-8"></script>
+<script>
+    var oTouch = new mTouch("touch1");
+    oTouch.attach('tap', function(evt){
+        addLog('[TAP] : nX :' + evt.nX + ", nY: "+ evt.nY);
+    });
+    oTouch.attach('longTap', function(evt){
+        addLog('[longTap] : nX :' + evt.nX + ", nY: "+ evt.nY);
+    });
+    oTouch.attach('doubleTap', function(evt){
+        addLog('[doubleTap] : nX :' + evt.nX + ", nY: "+ evt.nY);
+    });
+    oTouch.attach('vScroll', function(evt){
+        addLog('[vScroll] : nX :' + evt.nX + ", nY: "+ evt.nY);
+    });
+    oTouch.attach('hScroll', function(evt){
+        addLog('[hScroll] : nX :' + evt.nX + ", nY: "+ evt.nY);
+    });
+    oTouch.attach('dScroll', function(evt){
+        addLog('[dScroll] : nX :' + evt.nX + ", nY: "+ evt.nY);
+    });
+    
+    var nIndex =0;
+    var welText = jindo.$Element('txt');
+    
+    addLog = function(sText){
+        var sHtml = nIndex++ +". " + sText +"\r\n";
+        welText.html(sHtml+ welText.html());
+    }
+</script>
+</html>​

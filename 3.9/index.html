@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
+<title>Mobile 회전 인지하기</title>
+<style>
+    div, span {
+        margin: 0px;
+        padding: 0px
+    }
+</style>
+</head>
+<body>
+<div id="imglist"></div>
+</body>
+<script src="../js/jindo.mobile.all.js" charset="utf-8"></script>
+<script src="../js/common.js" charset="utf-8"></script>
+<script src="../js/rotate.js" charset="utf-8"></script>
+<script>
+    var elImgList = jindo.$Element("imglist");
+
+    // 코니를 추가한다.
+    function fncAddImg() {
+        var elSpanTag = jindo.$("<span>");
+        elSpanTag.innerHTML = "<img src='cony.png'/>";
+        elImgList.append(elSpanTag);
+    }
+
+    // 코니를 제거한다.
+    function fncRemoveImg() {
+        elImgList.remove(elImgList.last());
+    }
+
+    // 페이지 로드가 완료된 경우.
+    jindo.$Fn(function() {
+
+        // orientationchange 이벤트를 등록한다.
+        var fnc = function() {
+            if (m.rotate.getVertical()) {
+                // 세로일 경우 코니를 제거
+                fncRemoveImg();
+            } else {
+                // 가로일 경우 코니를 추가
+                fncAddImg();
+            }
+        };
+        // 모바일 회전시 발생하는 이벤트 바인드
+        m.rotate.bind(fnc);
+
+        // 모바일 회전시 발생하는 이벤트 언바인드
+        // m.rotate.unbind(fnc);
+
+        // 초기에 코니 3개를 추가
+        for (var i = 0; i < 3; i++) {
+            fncAddImg();
+        }
+    }).attach(window, "load"); 
+</script>
+</html>​

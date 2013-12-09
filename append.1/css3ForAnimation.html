@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>CSS를 이용한 애니메이션 구현</title>
+        <style>
+            .leftTransition {
+                -webkit-transition: left 2s ease-out;
+            }
+
+            .leftTranslate {
+                -webkit-transition: -webkit-transform 2s ease-out;
+                -webkit-transform: translate(0,0);
+            }
+
+            .leftTranslate3d {
+                -webkit-transition: -webkit-transform 2s ease-out;
+                -webkit-transform: translate3d(0,0,0);
+            }
+        </style>
+    </head>
+    <body>
+        <div id="box1" style="position:absolute; border:1px solid red; left:0px; top:0px; width:100px; height:100px">
+            left
+        </div>
+
+        <div id="box2" style="position:absolute; border:1px solid blue; left:0px; top:120px; width:100px; height:100px">
+            translate
+        </div>
+
+        <div id="box3" style="position:absolute; border:1px solid green; left:0px; top:240px; width:100px; height:100px">
+            translate3d
+        </div>
+        <script>
+            var ele1 = document.getElementById("box1");
+            var ele2 = document.getElementById("box2");
+            var ele3 = document.getElementById("box3");
+
+            ele1.className = "leftTransition";
+            ele2.className = "leftTranslate";
+            ele3.className = "leftTranslate3d";
+
+            setTimeout(function() {
+                ele1.style.left = "300px";
+                ele2.style.webkitTransform = "translate(300px,0px)";
+                ele3.style.webkitTransform = "translate3d(300px,0px,0)";
+            }, 10);
+        </script>
+    </body>
+</html>

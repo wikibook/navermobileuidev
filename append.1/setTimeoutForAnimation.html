@@ -1,0 +1,20 @@
+<HTML>
+    <head>
+        <title>setTimeout() 메서드를 이용한 애니메이션 구현</title>
+    </head>
+    <body>
+        <DIV id="box" style="position:absolute; left:0px; border:1px solid red; width:100px; height:100px"></DIV>
+        <script>
+            var elBox = document.getElementById("box"),
+            nAnimateTimer = null,
+            fAnimate = function() {
+                elBox.style.left = parseInt(elBox.style.left, 10) + 5 + "px";
+                // 종료시점
+                if (parseInt(elBox.style.left, 10) < 300) {
+                    nAnimateTimer = setTimeout(fAnimate, 1000 / 60);
+                }
+            };
+            nAnimateTimer = setTimeout(fAnimate, 1000 / 60);
+        </script>
+    </body>
+</html>

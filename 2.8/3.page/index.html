@@ -1,0 +1,40 @@
+<HTML>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
+        <title>pageshow 이벤트 예시</title>
+        <style type="text/css">
+            body, p, input, a {
+                font-family: Verdana, sans-serif;
+                font-size: 17px;
+            }
+        </style>
+        <script type="text/javascript">
+            function onLoad() {
+                onPageShow();
+            }
+
+            function onPageShow() {
+                var currentTime = new Date();
+                var year = currentTime.getFullYear();
+                var month = currentTime.getMonth() + 1;
+                var day = currentTime.getDate();
+                var hour = currentTime.getHours();
+                var min = currentTime.getMinutes();
+                var sec = currentTime.getSeconds();
+                var displayTime = (month + "/" + day + "/" + year + " " + hour + ":" + min + ":" + sec);
+                document.getElementById("timeInput").value = displayTime;
+            }
+
+        </script>
+    </head>
+    <body onload="onLoad();" onpageshow="onPageShow();">
+
+        <a href="http://naver.com">네이버로 이동</a>
+        <br>
+        <br>
+        <label for="timeInput">Date and time:</label>
+        <input type="text" id="timeInput">
+        </form>
+    </body>
+</html>

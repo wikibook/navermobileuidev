@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
+        <title>Document</title>
+        <style>
+            body, div {
+                font-size: 15pt;
+                font-family: "tahoma";
+            }
+        </style>
+    </head>
+    <body style="margin : 0 0 0 0;">
+        <script type="text/javascript">
+            var i = 0;
+            var j = 1;
+            var a = [];
+            var bScrollContinue = false;
+            var bMoveContinue = false;
+            document.addEventListener("scroll", function() {
+                i++;
+                if (bScrollContinue) {
+                    a.pop();
+                    j++;
+                } else {
+                    j = 1;
+                }
+                bScrollContinue = true;
+                bMoveContinue = false;
+                a.push("scroll (" + j + ")");
+                document.getElementById("log2").innerHTML = a.join("<br>");
+                document.getElementById("log").innerHTML = "Count : " + i + " scrollY : " + document.body.scrollTop;
+            });
+
+            document.addEventListener("touchstart", function() {
+                bScrollContinue = false;
+                bMoveContinue = false;
+                a.push("touchstart");
+                document.getElementById("log2").innerHTML = a.join("<br>");
+            });
+
+            document.addEventListener("touchmove", function() {
+                if (bMoveContinue) {
+                    a.pop();
+                    j++;
+                } else {
+                    j = 1;
+                }
+                bMoveContinue = true;
+                bScrollContinue = false;
+                a.push("touchmove (" + j + ")");
+                document.getElementById("log2").innerHTML = a.join("<br>");
+            });
+
+            document.addEventListener("touchend", function() {
+                bScrollContinue = false;
+                bMoveContinue = false;
+                a.push("touchend");
+                document.getElementById("log2").innerHTML = a.join("<br>");
+            });
+        </script>
+        <div id="log" style="position:fixed; top:0px;background-color: rgb(51,102,255);color: #ffffff;width: 100%;margin: 0 0 0 0;padding: 20px;">
+            Count : 0 scrollY : 0
+        </div>
+        <div id="log2" style="position:fixed; top:50px;background-color: rgb(51,102,255);color: #ffffff;width: 100%;margin: 0 0 0 0;padding: 20px;"></div>
+        <div style="height:2000px"></div>
+    </body>
+</html>

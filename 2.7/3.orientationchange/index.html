@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
+<title>orientationchange</title>
+<style>
+    div, span {
+        margin: 0px;
+        padding: 0px
+    }
+</style>
+</head>
+<body>
+<div id="imglist"></div>
+</body>
+<script>
+    var elImgList = document.getElementById("imglist");
+
+    // 코니를 이미지를 추가한다.
+    function fncAddImg() {
+        var elSpanTag = document.createElement("span");
+        elSpanTag.innerHTML = "<img src='cony.png'/>";
+        elImgList.appendChild(elSpanTag);
+    }
+
+    // 코니를 이미지를 제거한다.
+    function fncRemoveImg() {
+        elImgList.removeChild(elImgList.lastChild);
+    }
+
+    // 페이지 로드가 완료된 경우.
+    window.onload = function() {
+        // orientationchange 이벤트를 등록한다.
+        window.addEventListener("orientationchange", function(event) {
+            var windowOrientation = window.orientation;
+            if (windowOrientation === 0 || windowOrientation == 180) {
+                // 기기 방향이 세로이면 코니 이미지를 제거
+                fncRemoveImg();
+            } else if (windowOrientation == 90 || windowOrientation == -90) {
+                // 기기 방향이 가로이면 코니 이미지를 추가
+                fncAddImg();
+            }
+        }, false);
+
+        // 초기에 코니 이미지를 3개를 추가
+        for (var i = 0; i < 3; i++) {
+            fncAddImg();
+        }
+    }  
+</script>
+</html>​

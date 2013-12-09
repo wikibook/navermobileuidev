@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
+        <title>banner</title>
+        <script src="../js/jindo.mobile.all.js" charset="utf-8"></script>
+        <style>
+            div, ul, ol, li, h3 {
+                margin: 0px;
+                padding: 0px
+            }
+            ul, ol {
+                list-style: none
+            }
+            h3 {
+                background-color: #000;
+                color: #fff;
+                line-height: 2em;
+            }
+
+            #contents {
+                height: 3000px;
+                width: 100%;
+            }
+            #banner {
+                border: 1px solid red;
+                background-color: #F3F3F3;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>Banner</h3>
+        <div id="contents">
+            콘텐츠입니다.
+        </div>
+        <div id="banner">
+            광고용 배너입니다.
+        </div>
+    </body>
+    <script src="../js/common.js" charset="utf-8"></script>
+    <script src="../js/rotate.js" charset="utf-8"></script>
+    <script src="./banner.js" charset="utf-8"></script>
+    <script>
+        var oBanner = new mBanner("banner");
+        oBanner.show();
+    </script>
+</html>

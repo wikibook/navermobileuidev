@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
+		<script src="detector.js" charset="utf-8"></script>
+		<title>detector test</title>
+		<style>
+			body {
+				background-color: black;
+				color: white;
+			}
+			fieldset {
+				margin: 10px;
+				background-color: green;
+				border-radius: 10px;
+			}
+			legend {
+				font-weight: bold;
+			}
+		</style>
+	</head>
+	<body>
+		<h3>You must access to a mobile browser.</h3>
+		<fieldset>
+			<legend>
+				Mobile information
+			</legend>
+			<ul>
+				<li>
+					<label> OS : </label><label id="os"> </label>
+					(<label id="osVersion"> </label> )
+				</li>
+				<li>
+					<label> Device : </label><label id="device"> </label>
+				</li>
+			</ul>
+		</filedset>
+		<script>
+			// 엘리먼트 ID에 value값을 설정하는 함수 set
+			function set(id, value) {
+				console.log(document.getElementById(id));
+				document.getElementById(id).innerHTML = value;
+			}
+
+			set("os", detector.os());
+			set("osVersion", detector.osVersion());
+			set("device", detector.device());
+		</script>
+	</body>
+</html>
