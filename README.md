@@ -26,7 +26,7 @@
 * [13장](Chapter13)
 * [14장](Chapter14)
 * [4부](Part04)
-  * [4부 샘플 사이트: Part04_Sample_Site](Part04/Part04_Sample_Site.zip)
+  * [4부 샘플 사이트: Part04_Sample_Site.zip](Part04/Part04_Sample_Site.zip)
 * [팁](Tip01)
 * 부록
   * [css3ForAnimation.html](Append01/css3ForAnimation.html)
