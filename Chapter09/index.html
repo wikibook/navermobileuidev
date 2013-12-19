@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+        <title>모바일 기기의 위치 확인하기</title>
+    </head>
+    <body style="margin:0px" onload="load();">
+        <iframe id="mapIframe" src="about:blank;" width="100%" height="100%"></iframe>
+        <script>
+            function load() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(fnShowPosition, fnError);
+                } else {
+                    alert("geolocation API를 사용할 수 없습니다.");
+                }
+                function fnShowPosition(s) {
+                    document.getElementById("mapIframe").src = "http://m.map.naver.com/map.nhn?pinId=31812699&pinType=site&lat=" + s.coords.latitude + "&lng=" + s.coords.longitude + "&dlevel=11&mapMode=0";
+                }
+
+                function fnError() {
+                    alert("오류가 발생해 위치정보를 얻어오지 못했습니다.");
+                }
+
+            }
+        </script>
+    </body>
+</html>

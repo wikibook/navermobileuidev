@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+        <title>scroll 이벤트 확인</title>
+    </head>
+    <body style="margin : 0 0 0 0;">
+        <div id="inScroll" style="height:200px;width:100%;overflow: scroll;-webkit-overflow-scrolling:touch;">
+            <div style="height:1000px; background-color:rgb(28, 198, 153);">
+                <br/>
+                <br/>
+                <br/>
+                overflow:scroll 속성이 있는 요소
+            </div>
+        </div>
+        <script type="text/javascript">
+            document.getElementById("inScroll").addEventListener("scroll", function(e) {
+                alert("스크롤 이벤트 발생");
+            });
+        </script>
+    </body>
+</html>

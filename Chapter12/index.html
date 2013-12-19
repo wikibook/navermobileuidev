@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+        <title>스크롤되는 콘텐츠 만들기</title>
+        <style>
+            header, footer, div, ul, ol, li, h3 {
+                margin: 0px;
+                padding: 0px
+            }
+            ul, ol {
+                list-style: none
+            }
+            header, footer {
+                background-color: #000;
+                color: #fff;
+                line-height: 2em;
+            }
+
+        </style>
+    </head>
+    <body>
+        <header>
+            화면 위에 고정된 영역
+        </header>
+        <div id="view">
+            <div>
+                <ul>
+                    <li>
+                        스크롤내용1
+                    </li>
+                    <li>
+                        스크롤내용2
+                    </li>
+                    <li>
+                        스크롤내용3
+                    </li>
+                    <li>
+                        스크롤내용4
+                    </li>
+                    <li>
+                        스크롤내용5
+                    </li>
+                    <li>
+                        스크롤내용6
+                    </li>
+                    <li>
+                        스크롤내용7
+                    </li>
+                    <li>
+                        스크롤내용8
+                    </li>
+                    <li>
+                        스크롤내용9
+                    </li>
+                    <li>
+                        스크롤내용10
+                    </li>
+                    <li>
+                        스크롤내용11
+                    </li>
+                    <li>
+                        스크롤내용12
+                    </li>
+                    <li>
+                        스크롤내용13
+                    </li>
+                    <li>
+                        스크롤내용14
+                    </li>
+                    <li>
+                        스크롤내용15
+                    </li>
+                    <li>
+                        스크롤내용16
+                    </li>
+                    <li>
+                        스크롤내용17
+                    </li>
+                    <li>
+                        스크롤내용18
+                    </li>
+                    <li>
+                        스크롤내용19
+                    </li>
+                    <li>
+                        스크롤내용20
+                    </li>
+                    <li>
+                        스크롤내용21
+                    </li>
+                    <li>
+                        스크롤내용22
+                    </li>
+                    <li>
+                        스크롤내용23
+                    </li>
+                    <li>
+                        스크롤내용24
+                    </li>
+                    <li>
+                        스크롤내용25
+                    </li>
+                    <li>
+                        스크롤내용26
+                    </li>
+                    <li>
+                        스크롤내용27
+                    </li>
+                    <li>
+                        스크롤내용28
+                    </li>
+                    <li>
+                        스크롤내용29
+                    </li>
+                    <li>
+                        스크롤내용30
+                    </li>
+                    <li>
+                        스크롤내용31
+                    </li>
+                    <li>
+                        스크롤내용32
+                    </li>
+                    <li>
+                        스크롤내용33
+                    </li>
+                    <li>
+                        스크롤내용34
+                    </li>
+                    <li>
+                        스크롤내용35
+                    </li>
+                    <li>
+                        스크롤내용36
+                    </li>
+                    <li>
+                        스크롤내용37
+                    </li>
+                    <li>
+                        스크롤내용38
+                    </li>
+                    <li>
+                        스크롤내용39
+                    </li>
+                    <li>
+                        스크롤내용40
+                    </li>
+                    <li>
+                        스크롤내용41
+                    </li>
+                    <li>
+                        스크롤내용42
+                    </li>
+                    <li>
+                        스크롤내용43
+                    </li>
+                    <li>
+                        스크롤내용44
+                    </li>
+                    <li>
+                        스크롤내용45
+                    </li>
+                    <li>
+                        스크롤내용46
+                    </li>
+                    <li>
+                        스크롤내용47
+                    </li>
+                    <li>
+                        스크롤내용48
+                    </li>
+                    <li>
+                        스크롤내용49
+                    </li>
+                    <li>
+                        스크롤내용50
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <footer>화면 아래에 고정된 영역</footer>
+        <script src="../js/jindo.mobile.all.js" charset="utf-8"></script>
+        <script src="../js/common.js" charset="utf-8"></script>
+        <script src="./mScroll.js" charset="utf-8"></script>
+    <script>
+        window.onload = function() {
+            // 위와 아래 고정된 영역의 높이를 구하고, 화면 크기를 구해 콘텐츠 영역의 높이를 구한다.
+            var nHeaderHeight = jindo.$Element(jindo.$$.getSingle("header")).height();
+            var nFooterHeight = jindo.$Element(jindo.$$.getSingle("footer")).height();
+            var nContentHeight = window.innerHeight - nHeaderHeight - nFooterHeight;
+            // mScroll 객체를 생성한다.
+            var oScroll = new mScroll("view", {
+                nWidth : "100%",
+                nHeight : nContentHeight
+            });
+        }
+    </script>
+    </body>
+</html>

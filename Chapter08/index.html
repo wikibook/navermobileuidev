@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+        <script src="detector.js" charset="utf-8"></script>
+        <title>모바일 기기 확인하기 예제</title>
+        <style>
+            body {
+                background-color: white;
+                color: #468847;
+            }
+            fieldset {
+                margin: 10px;
+                background-color: #dff0d8;
+                border-radius: 10px;
+            }
+            legend {
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>모바일 브라우저에서 접속하십시오.</h3>
+        <fieldset>
+            <legend>
+                모바일 기기 정보
+            </legend>
+            <ul>
+                <li>
+                    <label>운영체제: </label><label id="os"> </label>
+                    (<label id="osVersion"> </label> )
+                </li>
+                <li>
+                    <label>기기 종류: </label><label id="device"> </label>
+                </li>
+            </ul>
+            </filedset>
+            <script>
+                // 반환받은 값을 지정한 요소의 내용으로 설정하는 함수
+                function set(id, value) {
+                    console.log(document.getElementById(id));
+                    document.getElementById(id).innerHTML = value;
+                }
+
+                set("os", detector.os());
+                set("osVersion", detector.osVersion());
+                set("device", detector.device());
+            </script>
+    </body>
+</html>

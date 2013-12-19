@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+        <title>pageshow 이벤트 예제</title>
+    </head>
+    <body>
+        <a href="http://m.naver.com">네이버로 이동</a>
+        <br>
+        <br>
+        <div type="textarea" id="eventMontor" style="width:100%; height:500px;"></div>
+        <script type="text/javascript">
+            var eventMontor = document.getElementById("eventMontor");
+            window.addEventListener("load", function(e) {
+                eventMontor.innerHTML += "load 이벤트<br>";
+            });
+            window.addEventListener("pageshow", function(e) {
+                console.log(e);
+                eventMontor.innerHTML += "pageshow 이벤트 [persisted] - " + e.persisted + "<br>";
+            });
+        </script>
+    </body>
+</html>

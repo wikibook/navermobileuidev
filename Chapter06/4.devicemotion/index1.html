@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+        <title>devicemotion 이벤트 활용 예제 - X축 기준 이동</title>
+        <style>
+            #elImg {
+                -webkit-transition: all 0.1s ease-out;
+                margin-top: 35%;
+                margin-left: 40%;
+                position: absolute;
+            }
+        </style>
+    </head>
+    <body style="width:100%;height:100%;" onload="top();">
+        <div id="elImg">
+            <img src="img.png" width="70px;" id="imgTag">
+        </div>
+        <span id="posText"></span>
+        <script>
+            window.addEventListener("devicemotion", function(e) {
+                var nX = e.accelerationIncludingGravity.x * 10;
+                document.getElementById("elImg").style.webkitTransform = "translate(" + nX + "px, 0px)";
+                document.getElementById("posText").innerHTML = nX;
+            }, false);
+        </script>
+    </body>
+</html>

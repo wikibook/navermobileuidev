@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+        <title>모바일 브라우저의 전체 화면 사용하기 예제</title>
+        <style>
+            body, div, span {
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="sizeinfo">
+            너비: <span id="nwidth"></span>
+            <br/>
+            높이: <span id="nheight"></span>
+        </div>
+        <script src="./mFullSize.js"></script>
+        <script>
+            var oFullSize = {};
+            function fCallback(htSize) {
+                document.getElementById("nwidth").innerHTML = htSize.width;
+                document.getElementById("nheight").innerHTML = htSize.height;
+                document.body.style.height = htSize.height + "px";
+            }
+
+
+            window.onload = function() {
+                oFullSize = new mFullSize(fCallback);
+            }
+        </script>
+    </body>
+</html>

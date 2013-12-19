@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+        <title>setInterval() 메서드를 이용한 애니메이션 구현</title>
+    </head>
+    <body>
+        <DIV id="box" style="position:absolute; left:0px; border:1px solid red; width:100px; height:100px"></DIV>
+        <script>
+            var elBox = document.getElementById("box"), nAnimateInterval = null, fAnimateLoop = function() {
+                elBox.style.left = parseInt(elBox.style.left, 10) + 5 + "px";
+                // 종료시점
+                if (parseInt(elBox.style.left, 10) > 300) {
+                    clearInterval(nAnimateInterval);
+                }
+            };
+            nAnimateInterval = setInterval(fAnimateLoop, 1000 / 60);
+        </script>
+    </body>
+</html>
