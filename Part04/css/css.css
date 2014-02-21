@@ -133,14 +133,15 @@ em, address {font-style: normal;}
 .flick-ct {height:490px !important}
 
 /* 기본 */
+/*
 @media all and (min-width:640px){
 	.wrap {position: relative;}
 	.wrap:before {display: block;position: absolute;top: 0;right: 0;z-index: 25;width: 37.5%;height: 100%;border-left: 1px solid #c2c6cb;background: #fff;content: '';}
 	.wrap:after {display: block;clear: both;content: '';}
 	.wrap_margin {margin-bottom: -1px;border-bottom: 1px solid #bdc7ce;}
 	
-
-	/*it 상식 */
+*/
+	/* IT 상식 */
 	.id_news .reco2 {top: 4px;}
 	.reco2 .tlst_w:not(.tlst_w_mz), .reco .tlst_w:not(.tlst_w_bk) {padding: 5px 8px 4px;}
 	.id_news .reco {padding-top: 118px;}
@@ -151,7 +152,7 @@ em, address {font-style: normal;}
 /*뉴스 하단 */
 .mr {margin-top: -1px;border-top: 1px solid #e4e5e7;text-align: right;height:39px;}
 
-/*it 상식 */
+/* IT 상식 */
 .h_wrap {position: relative;}
 .h_wrap .h, .h_wrap .h_wws {overflow: hidden;position: relative;z-index: 15;margin-top: -1px;padding: 12px 10px 2px;border-top: 1px solid #9ea4ac;border-bottom: #fff;background: #fff;font-size: 16px;color: #333;letter-spacing: -1px;}
 .reco2 .tlst_w, .reco .tlst_w {margin-top: 0;border: 0;}
@@ -164,14 +165,14 @@ img, fieldset {border: 0;}
     /* 뉴스 */
     wrap_cont {float: left;width: 62.5%;}
 
-    /*it 상식 */
+    /* IT 상식 */
     .reco2 {position: absolute;top: 4px;right: 0;z-index: 32;width: 37.5%;}
 }
 
 @media all and (min-width: 640px) and (max-width: 859px) {
-    /*it 상식 */
+    /* IT 상식 */
     .reco2 .tlst_w .tlst, .reco .tlst_w .tlst {clear: none;width: 50%;}
-    .reco2 .tlst_w  .tlst:nth-child(3) {display: none;}
+    .reco2 .tlst_w .tlst:nth-child(3) {display: none;}
 }
 
 .h_wrap .h {

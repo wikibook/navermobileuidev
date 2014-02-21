@@ -24,7 +24,7 @@
         <h3>터치 움직임 분석</h3>
         <div id="touch1" style="width:100%;height:150px;background-color:gray;">
             <p style="padding:20px;">
-                이 화면에서 터치하세요.
+                이 영역을 터치하세요.
             </p>
         </div>
         <br>
@@ -38,7 +38,7 @@
 <script>
     var oTouch = new mTouch("touch1");
     oTouch.attach('tap', function(evt){
-        addLog('[TAP] : nX :' + evt.nX + ", nY: "+ evt.nY);
+        addLog('[tap] : nX :' + evt.nX + ", nY: "+ evt.nY);
     });
     oTouch.attach('longTap', function(evt){
         addLog('[longTap] : nX :' + evt.nX + ", nY: "+ evt.nY);

@@ -5,11 +5,11 @@ window.mFlicking = (function() {
         childnode : "flick-panel"
     }, 
     nContainerWidth = 0, 
-    nTouchStartX = 0, // touchstart 의 X 좌표
-    nTouchStartY = 0, // touchStart 의 Y 좌표
-    nTouchX = 0, // touchmove, touchend 의 X 좌표
-    nTouchY = 0, // touchmove, touchend 의 Y 좌표
-    nIndex = 0, // 화면에 노출되고 있는 element의 index
+    nTouchStartX = 0, // touchstart의 X 좌표
+    nTouchStartY = 0, // touchStart의 Y 좌표
+    nTouchX = 0, // touchmove, touchend의 X 좌표
+    nTouchY = 0, // touchmove, touchend의 Y 좌표
+    nIndex = 0, // 화면에 보이는 요소의 인덱스
     nTimeout = 0;
 
     var _attachTouchStart = function() {

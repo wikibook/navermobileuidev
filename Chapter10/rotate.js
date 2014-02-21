@@ -1,7 +1,7 @@
 (function($) {
     $.rotate = {
         /**
-         * @description 이벤트 정제를 위한 timer변수
+         * @description 불필요한 이벤트를 피하기 위한 타이머 변수
          */
         _nRotateTimer : null,
 
@@ -13,7 +13,7 @@
 
         /**
          * @description 모바일 회전 적용 이벤트
-         * @return {String} 이벤트명
+         * @return {String} 이벤트 이름
          */
         getRotateEvt : function() {
             var bEvtName = 'onorientationchange' in window ? 'orientationchange' : 'resize';
@@ -24,8 +24,8 @@
         },
 
         /**
-         * @description 디바이스 기기의 가로,세로 여부를 판단함.
-         * @return {Boolean} 세로일경우 true, 가로일 경우 false
+         * @description 모바일 기기의 방향이 세로인지 확인함
+         * @return {Boolean} 세로면 true, 가로면 false
          */
         getVertical : function() {
             var bVertical = null, sEventType = this.getRotateEvt();
@@ -44,7 +44,7 @@
                 } else if (windowOrientation == 90 || windowOrientation == -90) {
                     bVertical = false;
                 }
-                // console.log("getVertical : orientationChange로 판별 -> " + bVertical);
+                // console.log("getVertical : orientationChange 이벤트로 판별 -> " + bVertical);
             }
             return bVertical;
         },
@@ -60,7 +60,7 @@
         },
 
         /**
-         * @description 모바일 회전이 발생하는 경우
+         * @description 모바일 기기가 회전했을 경우
          */
         _onRotate : function(evt) {
             var self = this;

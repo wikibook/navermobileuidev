@@ -66,7 +66,7 @@ window.mTouch = (function() {
     };
 
     var _onStart = function(oEvent) {
-        //touch 정보들의 초기화
+        // touch 정보를 초기화
         _resetTouchInfo();
 
         var htInfo = _getTouchInfo(oEvent);
@@ -82,10 +82,10 @@ window.mTouch = (function() {
             return;
         }
 
-        //touchstart 플래그 세팅
+        // touchstart 플래그 설정
         _bStart = true;
 
-        //move info update
+        // 이동 정보 업데이트
         _htMoveInfo.nStartX = htInfo[0].nX;
         _htMoveInfo.nBeforeX = htInfo[0].nX;
         _htMoveInfo.nStartY = htInfo[0].nY;
@@ -105,17 +105,17 @@ window.mTouch = (function() {
 
         var htInfo = _getTouchInfo(oEvent);
 
-        //현재 _nMoveType이 없거나 tap 혹은 longTap일 때 다시 _nMoveType을 계산한다..
+        // 현재 _nMoveType이 없거나 탭 혹은 롱탭일 때 다시 _nMoveType을 계산한다.
         if (_nMoveType < 0 || _nMoveType == 3 || _nMoveType == 4) {
             var nMoveType = _getMoveType(htInfo[0].nX, htInfo[0].nY);
             if (!((_nMoveType == 4) && (nMoveType == 3))) {
                 _nMoveType = nMoveType;
             }
         }
-        //커스텀 이벤트에 대한 파라미터 생성.
+        // 커스텀 이벤트에 대한 파라미터 생성
         htParam = _getCustomEventParam(htInfo, false);
 
-        //longtap timer 삭제
+        // longtap timer 삭제
         if (( typeof _nLongTapTimer != 'undefined') && _nMoveType != 3) {
             _deleteLongTapTimer();
         }
@@ -123,15 +123,15 @@ window.mTouch = (function() {
         htParam.oEvent = oEvent;
 
         var nDis = 0;
-        if (_nMoveType == 0) {//hScroll일 경우
+        if (_nMoveType == 0) {// hScroll일 경우
             nDis = Math.abs(htParam.nVectorX);
-        } else if (_nMoveType == 1) {//vScroll일 경우
+        } else if (_nMoveType == 1) {// vScroll일 경우
             nDis = Math.abs(htParam.nVectorY);
-        } else {//dScroll 일 경우
+        } else {// dScroll일 경우
             nDis = Math.abs(htParam.nVectorX) + Math.abs(htParam.nVectorY);
         }
 
-        //move간격이 옵션 설정 값 보다 작을 경우에는 커스텀이벤트를 발생하지 않는다
+        // 움직인 간격이 옵션 설정값보다 작은 경우에는 커스텀 이벤트를 발생시키지 않는다.
         if (nDis < _htOption['nMoveThreshold']) {
             return;
         }
@@ -140,7 +140,7 @@ window.mTouch = (function() {
             _bStart = false;
             return;
         }
-        //touchInfo 정보의  before 정보만 업데이트 한다.
+        // touchInfo 정보의 before 정보만 업데이트한다.
         _htMoveInfo.nBeforeX = htInfo[0].nX;
         _htMoveInfo.nBeforeY = htInfo[0].nY;
         _htMoveInfo.nBeforeTime = htInfo[0].nTime;
@@ -151,32 +151,32 @@ window.mTouch = (function() {
             return;
         }
         _deleteLongTapTimer();
-        //touchMove이벤트가 발생하지 않고 현재 롱탭이 아니라면 tap으로 판단한다.
+        // touchMove이벤트가 발생하지 않고 현재 롱탭이 아니라면 탭으로 판단한다.
         if (!_bMove && (_nMoveType != 4)) {
             _nMoveType = 3;
         }
 
-        //touchEnd 시점에 판단된  moveType이 없으면 리턴한다.
+        // touchEnd 시점에 판단된 _nMoveType이 없으면 리턴한다.
         if (_nMoveType < 0) {
             return;
         }
 
         var htInfo = _getTouchInfo(oEvent);
 
-        //현재 touchEnd시점의 타입이 doubleTap이라고 판단이 되면
+        // 현재 touchEnd 시점의 타입이 더블탭이라고 판단되는 경우
         if (_isDblTap(htInfo[0].nX, htInfo[0].nY, htInfo[0].nTime)) {
             clearTimeout(_nTapTimer);
             delete _nTapTimer;
             _nMoveType = 5;
-            //doubleTap 으로 세팅
+            // 더블탭으로 설정
         }
 
-        //커스텀 이벤트에 대한 파라미터 생성.
+        // 커스텀 이벤트에 대한 파라미터 생성
         var htParam = _getCustomEventParam(htInfo, true);
         htParam.oEvent = oEvent;
         var sMoveType = htParam.sMoveType;
 
-        //doubletap 핸들러가  있고, 현재가  tap 인 경우
+        // 더블탭 핸들러가 있고, 현재가 탭인 경우
         if (( typeof _htEventHandler[m.MOVETYPE[5]] != 'undefined' && (_htEventHandler[m.MOVETYPE[5]].length > 0)) && (_nMoveType == 3)) {
             _nTapTimer = setTimeout(function() {
                 _fireEvent('touchEnd', htParam);
@@ -191,7 +191,7 @@ window.mTouch = (function() {
             }
         }
 
-        //touchEnd info 업데이트
+        // touchEnd 정보를 업데이트
         _htEndInfo = {
             element : htInfo[0].el,
             time : htInfo[0].nTime,
@@ -256,7 +256,7 @@ window.mTouch = (function() {
         var nY = Math.abs(_htMoveInfo.nStartY - y);
         var nDis = nX + nY;
 
-        //tap정의
+        // 탭 정의
         var nGap = _htOption['nTapThreshold'];
         if ((nX <= nGap) && (nY <= nGap)) {
             nType = 3;
@@ -289,13 +289,13 @@ window.mTouch = (function() {
         var nVectorX = nVectorY = nMomentumX = nMomentumY = nSpeedX = nSpeedY = nDisX = nDisY = 0;
 
         nDisX = (_nMoveType === 1) ? 0 : htTouchInfo[0].nX - _htMoveInfo.nStartX;
-        //vScroll
+        // vScroll
         nDisY = (_nMoveType === 0) ? 0 : htTouchInfo[0].nY - _htMoveInfo.nStartY;
-        //hScroll
+        // hScroll
 
         nVectorX = htTouchInfo[0].nX - _htMoveInfo.nBeforeX;
         nVectorY = htTouchInfo[0].nY - _htMoveInfo.nBeforeY;
-        //scroll 이벤트만 계산 한다
+        // scroll 이벤트만 계산한다.
         if (bTouchEnd && (_nMoveType == 0 || _nMoveType == 1 || _nMoveType == 2 )) {
             if (nDuration <= _htOption['nMomentumDuration']) {
                 nSpeedX = Math.abs(nDisX) / nDuration;
@@ -334,7 +334,7 @@ window.mTouch = (function() {
             htParam.aElement = aElement;
         }
 
-        //touchend 에는 가속에 대한 계산값을 추가로 더 필요로 한다.
+        // touchend에는 가속에 대한 계산값이 추가로 필요하다.
         if (bTouchEnd) {
             htParam.nMomentumX = nMomentumX;
             htParam.nMomentumY = nMomentumY;
@@ -354,7 +354,7 @@ window.mTouch = (function() {
             return true;
         }
         aHandlerList = aHandlerList.concat();
-        //fireEvent수행시 핸들러 내부에서 detach되어도 최초수행시의 핸들러리스트는 모두 수행
+        // fireEvent 수행 시 핸들러 내부에서 해제(detach)돼도 최초 수행 시의 핸들러 목록은 모두 수행
 
         oEvent.sType = sEvent;
         if ( typeof oEvent._aExtend == 'undefined') {
@@ -399,7 +399,7 @@ window.mTouch = (function() {
     };
 
     var _startLongTapTimer = function(htInfo, oEvent) {
-        //long tap handler 가 있을경우
+        // 롱탭 핸들러가 있을 경우
         if (( typeof _htEventHandler[m.MOVETYPE[4]] != 'undefined') && (_htEventHandler[m.MOVETYPE[4]].length > 0)) {
             self._nLongTapTimer = setTimeout(function() {
                 _fireEvent('longTap', {
@@ -409,7 +409,7 @@ window.mTouch = (function() {
                     nY : htInfo[0].nY
                 });
                 delete _nLongTapTimer;
-                //현재 moveType 세팅
+                // 현재 _nMoveType 설정
                 _nMoveType = 4;
             }, _htOption['nLongTapDuration']);
         }

@@ -1,5 +1,5 @@
 window.mBanner = (function() {
-    // private memeber
+    // private member
     var _htWElement = {}, 
     _htEvent = {}, 
     _htOption = {
@@ -70,11 +70,11 @@ window.mBanner = (function() {
         nWidth = oClientSize.width, 
         nHeight = oClientSize.height;
 
-        // 레이어에 바깥 여백이 있을 때 렌더링 보정
+        // 레이어에 바깥 여백(margin)이 있을 때 렌더링 보정
         nLayerWidth += parseInt(_htWElement["element"].css('marginLeft'), 10) + parseInt(_htWElement["element"].css('marginRight'), 10) || 0;
         nLayerHeight += parseInt(_htWElement["element"].css('marginTop'), 10) + parseInt(_htWElement["element"].css('marginBottom'), 10) || 0;
 
-        // 배너를 가운데 보이게 하는 left 속성값을 구한다.
+        // 배너를 가운데에 보이게 하는 left 속성값을 구한다.
         htElementPosition.nLeft = parseInt((nWidth - nLayerWidth) / 2, 10);
         // 배너의 위치에 따라 top 속성값이나 bottom 속성값을 구한다.
         switch (sPosition) {
@@ -102,8 +102,9 @@ window.mBanner = (function() {
     
     _setPosition = function(sPosition) {
         _sPosition = sPosition || _sPosition;
-        // 레이어의 visible 상태를 확인해 보이지 않는 상태면 안드로메다 영역으로 위치를 지정후 레이어가 보이게 한다.
-        // 위치 값을 다 확인했으면 다시 레이어를 숨긴다.
+        // 배너 레이어가 보이지 않게 돼 있을 경우 화면에 보이지 않는 영역으로 위치를
+        // 지정한 후 배너를 보이게 한다.
+        // 배너의 위치를 구했으면 다시 배너가 보이지 않게 한다.
         var bVisible = _htWElement["element"].visible();
         if (!bVisible) {
             _htWElement["element"].css({
@@ -116,8 +117,8 @@ window.mBanner = (function() {
             _htWElement["element"].hide();
         }
 
-        // 기존 좌표와 현재 좌표가 다르면 변경. 그렇지 않으면 좌표를 변경하지 않음
-        // 안 보이면 무조건 변경함
+        // 기존 위치값과 현재 위치값이 다르면 변경. 그렇지 않으면 위치값을 변경하지 않음.
+        // 안 보이면 무조건 변경함.
         if (!bVisible || _htOldPosition.nLeft !== _htPosition.nLeft || _htOldPosition.nTop !== _htPosition.nTop || _htOldPosition.nBottom !== _htPosition.nBottom) {
             if ( typeof _htPosition.nTop === "undefined") {
                 _htWElement["element"].$value().style.top = null;

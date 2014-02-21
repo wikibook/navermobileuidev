@@ -6,7 +6,7 @@
         <title>requestAnimationFrame() 메서드를 이용한 애니메이션 구현</title>
     </head>
     <body>
-        <DIV id="box" style="position:absolute; left:0px; border:1px solid red; width:100px; height:100px"></DIV>
+        <div id="box" style="position:absolute; left:0px; border:1px solid red; width:100px; height:100px"></div>
         <script>
             // requestAnimationFrame을 브라우저별로 정의
             window.requestAnimationFrame = (function() {
@@ -18,7 +18,7 @@
 
             var elBox = document.getElementById("box"), nAnimateTimer = null, fAnimate = function() {
                 elBox.style.left = parseInt(elBox.style.left, 10) + 5 + "px";
-                // 종료시점
+                // 종료 시점
                 if (parseInt(elBox.style.left, 10) < 300) {
                     nAnimateTimer = requestAnimationFrame(fAnimate);
                 }

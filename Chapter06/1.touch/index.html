@@ -31,11 +31,11 @@
             elLog.innerHTML = sText;
         }
 
-        // 페이지 로딩이 완료된 경우.
+        // 페이지 로딩이 완료된 경우
         window.onload = function() {
             // touchstart 이벤트를 등록한다.
             elTouch.addEventListener("touchstart", function(event) {
-                //touchstart 이벤트의 기본 동작을 막는다. 이 영역에서는 브라우저의 스크롤 기능이 동작하지 않는다.
+                // touchstart 이벤트의 기본 동작을 막는다. 이 영역에서는 브라우저의 스크롤 기능이 동작하지 않는다.
                 event.preventDefault();
                 var oTouch = event.changedTouches;
                 var sTxt = '';
@@ -45,7 +45,7 @@
 
                 addLog('[touchstart]' + sTxt);
             });
-            //touchmove 이벤트를 등록한다.
+            // touchmove 이벤트를 등록한다.
             elTouch.addEventListener("touchmove", function(event) {
                 var oTouch = event.changedTouches;
                 var sTxt = '';
@@ -55,7 +55,7 @@
                 addLog('[touchmove]' + sTxt);
             });
 
-            //touchend 이벤트를 등록한다.
+            // touchend 이벤트를 등록한다.
             elTouch.addEventListener("touchend", function(event) {
                 var oTouch = event.changedTouches;
                 var sTxt = '';

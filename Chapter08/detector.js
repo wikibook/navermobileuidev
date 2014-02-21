@@ -25,7 +25,7 @@
     };
 
     /**
-     * 해시 테이블을 순환하여 true를 반환하는 함수
+     * 해시 테이블을 순환해서 정규식과 매칭되는 것이 있으면 true를 반환하는 함수
      */
     function eachHash(ht) {
         for (var key in ht) {

@@ -28,7 +28,7 @@ window.mScroll = (function() {
     }, 
 
     _setProperty = function() {
-        // wrapper의 postion : relative로 변경
+        // wrapper 요소의 속성을 postion : relative로 변경
         _htWElement["wrapper"].css({
             "position" : "relative",
             "overflow" : "hidden"
@@ -87,7 +87,7 @@ window.mScroll = (function() {
         if (!_bUseHScroll && !_bUseVScroll) {
             return;
         }
-        // 최대, 최소범위 지정
+        // 최대, 최소 범위 지정
         var nNewLeft = _nLeft >= 0 ? 0 : (_nLeft <= _nMaxScrollLeft ? _nMaxScrollLeft : _nLeft), 
         nNewTop = _nTop >= 0 ? 0 : (_nTop <= _nMaxScrollTop ? _nMaxScrollTop : _nTop);
         if (nNewLeft === _nLeft && nNewTop === _nTop) {
@@ -118,7 +118,7 @@ window.mScroll = (function() {
     // public
     mScroll.prototype = {
         refresh : function() {
-            // wrappwer 크기 지정
+            // wrapper 크기 지정
             if (_htOption["nWidth"] != 0) {
                 _htWElement["wrapper"].css("width", _htOption["nWidth"]);
             }
@@ -130,7 +130,7 @@ window.mScroll = (function() {
             nWrapperH = _htWElement["wrapper"].height() - parseInt(_htWElement["wrapper"].css("border-top-width"), 10) - parseInt(_htWElement["wrapper"].css("border-bottom-width"), 10), 
             nScrollW = _htWElement["scroller"].width(), nScrollH = _htWElement["scroller"].height();
 
-            // 스크롤 여부 판별 및 최대 사이즈 지정
+            // 스크롤 여부 판별 및 최대 크기 지정
             _bUseHScroll = _htOption["bUseHScroll"] && (nWrapperW <= nScrollW);
             _bUseVScroll = _htOption["bUseVScroll"] && (nWrapperH <= nScrollH);
             _nMaxScrollLeft = nWrapperW - nScrollW;
